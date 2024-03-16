@@ -14,8 +14,15 @@ private:
 	char* smallIconKey;
 	char* smallIconText;
 
+
 public:
 
+	std::string hstate;
+	std::string hdetails;
+	std::string hlargeIconKey;
+	std::string hlargeIconText;
+	std::string hsmallIconKey;
+	std::string hsmallIconText;
 
 	void setState(const char* s_State) { State = _strdup(s_State); };
 	void setDetails(const char* s_details) { details = _strdup(s_details); };
@@ -31,6 +38,7 @@ public:
 	char* getSmallIconKey() { return smallIconKey; };
 	char* getSmallIconText() { return smallIconText; };
 
+	void UpdateDiscordPresence(const char* state, const char* detail, const char* largeIconKey, const char* largeIconText, const char* smallIconKey, const char* smallIconText);
 	void Initialize();
 	void Update();
 };
