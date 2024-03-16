@@ -1,12 +1,10 @@
 #include <iostream>
-#include "Discord.h";
+#include "Discord.h"
+Discord discord;
 
-Discord * g_discord;
-
-int main()
-{
-	g_discord->Initialize();
-	g_discord->Update();
-	system("PAUSE");
-	return 0;
+int main() {
+    setlocale(LC_ALL, "Russian");
+    discord.Initialize();
+    discord.Update();
+    return 0;
 }
