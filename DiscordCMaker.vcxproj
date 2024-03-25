@@ -18,6 +18,30 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="include\imgui\imgui.cpp" />
+    <ClCompile Include="include\imgui\imgui_demo.cpp" />
+    <ClCompile Include="include\imgui\imgui_draw.cpp" />
+    <ClCompile Include="include\imgui\imgui_stdlib.cpp" />
+    <ClCompile Include="include\imgui\imgui_tables.cpp" />
+    <ClCompile Include="include\imgui\imgui_widgets.cpp" />
+    <ClCompile Include="src\app_config.cpp" />
+    <ClCompile Include="src\app_interface.cpp" />
+    <ClCompile Include="src\discord_part.cpp" />
+    <ClCompile Include="src\main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\imgui\imconfig.h" />
+    <ClInclude Include="include\imgui\imgui.h" />
+    <ClInclude Include="include\imgui\imgui_internal.h" />
+    <ClInclude Include="include\imgui\imgui_stdlib.h" />
+    <ClInclude Include="include\imgui\imstb_rectpack.h" />
+    <ClInclude Include="include\imgui\imstb_textedit.h" />
+    <ClInclude Include="include\imgui\imstb_truetype.h" />
+    <ClInclude Include="src\app_config.h" />
+    <ClInclude Include="src\app_interface.h" />
+    <ClInclude Include="src\discord_part.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
@@ -104,13 +128,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\Pidor228OC\Documents\GitHub\DiscordC-Maker\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Pidor228OC\Documents\GitHub\DiscordC-Maker\include;C:\Users\Pidor228OC\Documents\GitHub\DiscordC-Maker\include\json;C:\Users\Pidor228OC\Documents\GitHub\DiscordC-Maker\include\extras;C:\Users\Pidor228OC\Documents\GitHub\DiscordC-Maker\include\imgui;C:\Users\Pidor228OC\Documents\GitHub\DiscordC-Maker\include\rlImGui;C:\Users\Pidor228OC\Documents\GitHub\DiscordC-Maker\include\DiscordRPC;C:\Users\Pidor228OC\Documents\GitHub\DiscordC-Maker\include\raylib;C:\Users\Pidor228OC\Documents\GitHub\DiscordC-Maker\include\raylib\external;C:\Users\Pidor228OC\Documents\GitHub\DiscordC-Maker\include\raylib\external\glfw\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>C:\Users\Pidor228OC\Documents\GitHub\DiscordC-Maker\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>discord-rpc.lib;jsoncpp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>winmm.lib;raylib.lib;rlImGui.lib;discord-rpc.lib;jsoncpp.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -121,7 +145,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\Pidor228OC\Documents\GitHub\DiscordC-Maker\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Pidor228OC\Documents\GitHub\DiscordC-Maker\include;C:\Users\Pidor228OC\Documents\GitHub\DiscordC-Maker\include\json;C:\Users\Pidor228OC\Documents\GitHub\DiscordC-Maker\include\extras;C:\Users\Pidor228OC\Documents\GitHub\DiscordC-Maker\include\imgui;C:\Users\Pidor228OC\Documents\GitHub\DiscordC-Maker\include\rlImGui;C:\Users\Pidor228OC\Documents\GitHub\DiscordC-Maker\include\DiscordRPC;C:\Users\Pidor228OC\Documents\GitHub\DiscordC-Maker\include\raylib;C:\Users\Pidor228OC\Documents\GitHub\DiscordC-Maker\include\raylib\external;C:\Users\Pidor228OC\Documents\GitHub\DiscordC-Maker\include\raylib\external\glfw\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -129,18 +153,9 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>C:\Users\Pidor228OC\Documents\GitHub\DiscordC-Maker\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>discord-rpc.lib;jsoncpp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>winmm.lib;raylib.lib;rlImGui.lib;discord-rpc.lib;jsoncpp.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="ConsoleInterface.cpp" />
-    <ClCompile Include="Discord.cpp" />
-    <ClCompile Include="main.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="ConsoleInterface.h" />
-    <ClInclude Include="Discord.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
