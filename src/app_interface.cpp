@@ -22,6 +22,11 @@ void app_interface::Draw()
 		ImGui::InputText("#Large Image Text", &discord.field_largeIconText, ImGuiInputTextFlags_CharsNoBlank);
 		ImGui::InputText("#Small Image Key", &discord.field_smallIconKey, ImGuiInputTextFlags_CharsNoBlank);
 		ImGui::InputText("#Small Image Text", &discord.field_smallIconText, ImGuiInputTextFlags_CharsNoBlank);
+		ImGui::InputText("#Button 1 Label", &discord.field_button1Label, ImGuiInputTextFlags_CharsNoBlank);
+		ImGui::InputText("#Button 1 Url", &discord.field_button1Url, ImGuiInputTextFlags_CharsNoBlank);
+		ImGui::InputText("#Button 2 Label", &discord.field_button2Label, ImGuiInputTextFlags_CharsNoBlank);
+		ImGui::InputText("#Button 2 Url", &discord.field_button2Url, ImGuiInputTextFlags_CharsNoBlank);
+
 		ImGui::NewLine();
 
 		if (ImGui::Button("Accept RPC Status")) {
@@ -32,13 +37,17 @@ void app_interface::Draw()
 			discord.setLargeIconText(discord.field_largeIconText.c_str());
 			discord.setSmallIconKey(discord.field_smallIconKey.c_str());
 			discord.setSmallIconText(discord.field_smallIconText.c_str());
+			discord.setButton1Label(discord.field_button1Label.c_str());
+			discord.setButton1Url(discord.field_button1Url.c_str());
+			discord.setButton2Label(discord.field_button2Label.c_str());
+			discord.setButton2Url(discord.field_button2Url.c_str());
 
 			Discord_ClearPresence();
 			Discord_Shutdown();
 
 			discord.UpdateDiscordHandler(discord.getId());
 			discord.UpdateDiscordPresence(discord.getState(), discord.getDetails(),
-				discord.getLargeIconKey(), discord.getLargeIconText(), discord.getSmallIconKey(), discord.getSmallIconText());
+				discord.getLargeIconKey(), discord.getLargeIconText(), discord.getSmallIconKey(), discord.getSmallIconText(), discord.getButton1Label(), discord.getButton1Url(), discord.getButton2Label(), discord.getButton2Url());
 		}
 
 
